@@ -37,6 +37,6 @@ select * from tb_produtos where preco between 3.00 and 60.00;
 
 select * from tb_produtos where nome like '%b%';
 
-select * from tb_produtos inner join tb_categoria on tb_produtos.id = tb_produtos.categoria_id;
+select * from tb_produtos inner join tb_categoria on tb_categoria.id = tb_produtos.categoria_id;
 
 select * from tb_produtos inner join tb_categoria on tb_categoria.id = tb_produtos.categoria_id where tb_categoria.id = 3;
