@@ -31,7 +31,7 @@ public class Postagem {
 	@Size(min = 5, max = 500)
 	private String texto;;
 	
-	 @UpdateTimestamp
+	@UpdateTimestamp
 	private LocalDateTime data;
 	 
 	@ManyToOne
