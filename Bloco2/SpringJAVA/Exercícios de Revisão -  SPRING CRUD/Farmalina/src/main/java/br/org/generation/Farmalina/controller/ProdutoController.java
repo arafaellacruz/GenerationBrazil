@@ -1,5 +1,6 @@
 package br.org.generation.Farmalina.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,11 @@ public class ProdutoController {
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
 		produtoRepository.deleteById(id);
+	}
+	
+	@GetMapping("/preco/{start}/preco/{end}")
+	public ResponseEntity <List<Produto>> getByPrecoBetween(@PathVariable BigDecimal start, @PathVariable BigDecimal end){
+		return ResponseEntity.ok(produtoRepository.findByPrecoBetween(start, end));
 	}
 
 }
