@@ -31,6 +31,10 @@ public class Produto {
 	@NotBlank
 	@Size(min = 5, max = 500)
 	private String descricao;
+	
+	@NotBlank
+	@Size(min = 5, max = 100)
+	private String console;
 
 	@Column(name = "data_lancamento")
 	@JsonFormat(pattern = "yyyy-MM-dd")
@@ -38,6 +42,25 @@ public class Produto {
 
 	@NotBlank
 	private BigDecimal preco;
+	
+	@NotBlank
+	private String foto;
+
+	public String getConsole() {
+		return console;
+	}
+
+	public void setConsole(String console) {
+		this.console = console;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 	@ManyToOne
 	@JsonIgnoreProperties("produto")

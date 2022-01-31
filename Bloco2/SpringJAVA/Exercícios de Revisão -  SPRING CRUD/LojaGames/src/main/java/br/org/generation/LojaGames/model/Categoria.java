@@ -23,6 +23,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@NotBlank
 		private String titulo;
 		
+		@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)	
+		@JsonIgnoreProperties("categoria") 
+		private List<Produto> produto;
+		
 		public String getTitulo() {
 			return titulo;
 		}
@@ -50,11 +54,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 			this.descricao = descricao;
 		}
 
-		/*
-		 * @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-		 * 
-		 * @JsonIgnoreProperties("categoria") private List<Produto> produto;
-		 */
+
 
 	}
 
