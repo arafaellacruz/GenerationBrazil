@@ -5,30 +5,41 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@NotBlank
+
+	@NotBlank(message = "O atributo Nome é obrigatório")
 	@Size(min = 2, max = 100)
 	private String nome;
-	
-	@NotBlank
-	@Size(min = 2, max = 100)
+
+	@NotBlank(message = "O atributo Usuário é obrigatório")
+	@Email(message = "O atributo usuário deve ser um e-mail válido!")
 	private String usuario;
-	
-	@NotBlank
+
+	@NotBlank(message = "O atributo Senha é obrigatório")
 	@Size(min = 2, max = 100)
 	private String senha;
-	
+
 	private String foto;
+
+	public Usuario(long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+
+	public Usuario() {  }
 
 	public String getFoto() {
 		return foto;
@@ -69,7 +80,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
 
 }
