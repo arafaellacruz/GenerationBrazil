@@ -15,7 +15,7 @@ import org.hibernate.annotations.UpdateTimestamp;// Registra exatamente o horár
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "Postagem")
+@Table(name = "tb_postagem")
 public class Postagem {
 	
 	
@@ -31,12 +31,18 @@ public class Postagem {
 	@Size(min = 5, max = 500)
 	private String texto;;
 	
+	private String foto;
+	
 	@UpdateTimestamp
 	private LocalDateTime data;
 	 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	 private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	 private Usuario usuario;
 	
 	
 	public Long getId() {
@@ -57,6 +63,13 @@ public class Postagem {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
+	
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 	public LocalDateTime getData() {
 		return data;
 	}
@@ -68,6 +81,12 @@ public class Postagem {
 	}
 	public void setTema(Tema tema) {
 		this.tema = tema;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 

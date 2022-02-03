@@ -2,6 +2,8 @@ package org.generation.blogpessoal.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.generation.blogpessoal.model.Tema;
 import org.generation.blogpessoal.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,19 +43,36 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
 	
-	@PostMapping
-	public ResponseEntity<Tema> post (@RequestBody Tema tema) {
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<Tema>> getByDescricao(@PathVariable String descricao) {
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
+	}
+
+	@PostMapping("/cadastrar")
+	public ResponseEntity<Tema> postTema(@Valid @RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
-	
-	@PutMapping
-	public ResponseEntity<Tema> put (@RequestBody Tema tema) {
-		return ResponseEntity.ok(repository.save(tema));
+
+	@PutMapping("/atualizar")
+	public ResponseEntity<Tema> putTema(@Valid @RequestBody Tema tema) {
+					
+		return repository.findById(tema.getId())
+				.map(resposta -> {
+					return ResponseEntity.ok().body(repository.save(tema));
+				})
+				.orElse(ResponseEntity.notFound().build());
+
 	}
-	
+
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable long id) {
-		repository.deleteById(id);
+	public ResponseEntity<?> deletePostagem(@PathVariable long id) {
+		
+		return repository.findById(id)
+				.map(resposta -> {
+					repository.deleteById(id);
+					return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+				})
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 }
