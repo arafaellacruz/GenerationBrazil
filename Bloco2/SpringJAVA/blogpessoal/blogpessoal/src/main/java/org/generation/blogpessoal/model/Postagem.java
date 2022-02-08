@@ -31,8 +31,6 @@ public class Postagem {
 	@Size(min = 5, max = 500)
 	private String texto;;
 	
-	private String foto;
-	
 	@UpdateTimestamp
 	private LocalDateTime data;
 	 
@@ -64,12 +62,6 @@ public class Postagem {
 		this.texto = texto;
 	}
 	
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
 	public LocalDateTime getData() {
 		return data;
 	}

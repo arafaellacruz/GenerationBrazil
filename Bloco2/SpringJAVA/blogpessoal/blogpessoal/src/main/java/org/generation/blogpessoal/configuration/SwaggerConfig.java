@@ -18,13 +18,20 @@ public class SwaggerConfig {
 	@Bean
 	public OpenAPI springBlogPessoalOpenAPI() {
 		return new OpenAPI()
-				.info(new Info().title("ProjetoBlogPessoal").description("Projeto Blog Pessoal *- Generation Brazil")
+				.info(new Info()
+						.title("ProjetoBlogPessoal")
+						.description("Projeto Blog Pessoal *- Generation Brazil")
 						.version("v0.0.1")
-						.license(new License().name("Generation Brazil").url("https://brazil.generation.org/"))
-						.contact(new Contact().name("Conteúdo Generation").url("https://github.com/rafacruzz")
+						.license(new License()
+								.name("Generation Brazil")
+								.url("https://brazil.generation.org/"))
+						.contact(new Contact()
+								.name("Conteúdo Generation")
+								.url("https://github.com/rafacruzz")
 								.email("rafaella.leticiaa@gmail.com")))
-				.externalDocs(new ExternalDocumentation().description("GitHub").url(
-						"https://github.com/rafacruzz/GenerationBrazil/tree/main/Bloco2/SpringJAVA/blogpessoal/blogpessoal"));
+				.externalDocs(new ExternalDocumentation()
+						.description("GitHub")
+						.url("https://github.com/rafacruzz/GenerationBrazil/tree/main/Bloco2/SpringJAVA/blogpessoal/blogpessoal"));
 	}
 
 	@Bean
