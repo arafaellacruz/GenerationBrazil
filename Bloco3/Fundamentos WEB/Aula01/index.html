@@ -10,47 +10,96 @@ Exemplo: < html lang = "pt-br" >-->
     <meta charset="UTF-8"> <!-- charset = colocar caracteres, como? Através do teclado através do UTF-8-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre a Rafa Cruz ♥</title>
+    <title>Meu blog pessoal - Rafa Cruz</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <nav>
-        <!--Definimos como um menu o que estiver dentro dessa tag-->
-        <ul>
-            <li>
-                <a href="index.html"> Home </a>
-            </li>
-            <li>
-                <a href="contato.html"> Contato </a>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul id="menu">
+                <li>
+                    <a href="index.html">Home </a>
+                </li>
+                <li>
+                    <a href="contato.html">Contato </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <div>
-        <!-- Definimos como uma caixa generica (nav: conteudo de navegação/menu, main: sabemos que o conteúdo dentro será a parte principal da página), definirmos aqui afeta tudo que está dentro dessa tag-->
-        <header>
-            <h1> Sobre a Rafa Cruz ♥ </h1>
-        </header>
+    <main>
 
-        <p>
-        💬 Tenho 22 anos, gosto de cultura geek, viajar, música e arte;
-        </br>
-        🖥️ Sou Desenvolvedora JAVA Jr. Full-Stack em formação pela Generation Brazil;
-        </br>
-        😄 Pronomes: Ela/Dela ;
-        </br>
-        ❤️ Amo jogos, meus pets e inglês;
-        </br>
-        ⚡ Atualmente trabalho na SumUp.
-        </p>
-       
+        <h1 class="center h1"> Sobre a Rafa Cruz ♥ </h1>
+
+        <div>
+            <!-- Definimos como uma caixa generica (nav: conteudo de navegação/menu, main: sabemos que o conteúdo dentro será a parte principal da página), definirmos aqui afeta tudo que está dentro dessa tag-->
+            <br>
+            <br>
+
+            <section class="container" class="p-30">
+                <p class="center">
+
+                    Oie, eu sou a Rafa. Meus pronomes são Ela/Dela, tenho 22 anos. Moro em São José dos Campos,
+                    SP,
+                    atualmente trabalho na SumUp como Agent II, e sou formada como técnica em Administração pelo
+                    CEPHAS
+                    (Centro de Educação Profissional Hélio Augusto de Souza).
+                    <br>
+                    <br>
+                    Após um processo seletivo com mais de mil candidatos, fui aprovada como aluna do bootcamp da
+                    Generation Brasil para formação como Desenvolvedora Java Jr Full-Stack. Serão 12 semanas de
+                    estudos
+                    intensos, mas tem sido incrível e transformador.
+                    <br>
+                    <br>
+                    • Meu GitHub: https://github.com/rafacruzz
+
+                </p>
+
+                <div>
+                    <img class="video br-50" width="560" height="550" src="./assets/img/imagem1.jpeg"
+                        alt="Foto da criadora deste conteúdo">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <h2 class="center">Minha artista preferida</h2>
+    <div class="container">
+        <iframe class="br-50" width="560" height="550" src="./assets/video/video-billie.mp4" frameborder="0"
+            allow="accelerometer;autoplay;encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
     </div>
+    <br>
+    </div>
+    <hr>
+    <br>
 
-    <img width="560" height="550"
-    src="./assets/img/imagem1.jpeg" 
-    alt="Foto da criadora deste conteúdo" />
+    <footer>
 
-    <iframe width="560" height="550" src="./assets/video/video-billie.mp4" title="Happier Than Ever - Edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="container rodape">
+            <div>
+                <a href="https://www.facebook.com/rafaella.leticia.cruz/">
+                    <img class="tm-social p-footer" src="assets/img/facebook.png" alt="Logo do Facebook">
+                </a>
+
+                <a href="https://www.instagram.com/">
+                    <img class="tm-social p-footer" src="assets/img/instagram.png" alt="Logo do Instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/rafaella-cruz1999/">
+                    <img class="tm-social p-footer" src="assets/img/linkedin.png" alt="Logo do Linkedin">
+                </a>
+            </div>
+            <div>
+                <p class="copy center">
+                    Todos os direitos reservados para Rafaella Cruz ©
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    </main>
 
 </body>
 
