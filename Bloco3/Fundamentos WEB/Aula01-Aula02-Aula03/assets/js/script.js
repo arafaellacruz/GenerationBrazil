@@ -97,3 +97,10 @@ function mapaNormal() {
     mapa.style.width = "300px"
     mapa.style.height = "250px"
 }
+
+/*
+setTimeOut("função que vai chamar quando o tempo esgotar()", n milisegundos ): vai executar uma ação depois de um determinado tempo em milisegundos (1 segundo = 1000milisegundos).
+
+• innerHtml -> Retorna o texto, COM formatações e COM elementos html. 
+• textContent -> Retorna o text COM formatações, mas sem os elementos html.
+*/
